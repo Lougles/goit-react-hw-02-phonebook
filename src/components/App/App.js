@@ -17,6 +17,13 @@ class App extends Component {
     if (this.state.contacts.some(item => item.name === data.name)) {
       alert(`${data.name} is already exsist in contact`);
       return;
+    } else if (data.name.length < 3) { 
+      alert(`Имя не может быть меньше 3 букв`)
+      return;
+    }
+    else if (data.number.length < 3) {
+      alert(`Номер не может быть меньше 3 цифр`)
+      return;
     }
     this.setState((prevState) => {
       return {
